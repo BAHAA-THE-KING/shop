@@ -25,7 +25,7 @@ const Category = (
             id={name}
             className="pb-10 grid grid-rows-1 items-center gap-3 overflow-auto"
             style={{
-               gridTemplateColumns: "repeat(6,24rem)", scrollbarWidth: "none"
+               gridTemplateColumns: "repeat(5,24rem) auto", scrollbarWidth: "none"
             }}>
             {
                products.map(

@@ -12,7 +12,7 @@ const SeeMoreCard = (
    const router = useRouter();
 
    return (
-      <Button title={"See More " + name + " ❯"} className="w-max" onClick={() => { router.push(""); }} />
+      <Button title={"See More " + name + " ❯"} className="w-max mr-24" onClick={() => { router.push(""); }} />
    );
 }
 
