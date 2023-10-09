@@ -2,23 +2,29 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
-import image0 from "@/public/Screenshot_1.png";
-import image1 from "@/public/Qpzduo8fafs.png";
-import image2 from "@/public/first tot.jpg";
+import image0 from "@/public/sofa.webp";
+import image1 from "@/public/toys.jpg";
+import image2 from "@/public/detergants.jpg";
 import normal from './styles/normal';
 
-const images = [
+const products = [
    {
+      id: 11,
+      name: "sofa",
       image: image0,
-      name: "calendar"
+      description: "Confort sofas."
    },
    {
+      id: 12,
+      name: "children toys",
       image: image1,
-      name: "dogs"
+      description: "toys for children under 12."
    },
    {
+      id: 13,
       image: image2,
-      name: "sussy idk"
+      name: "New detergants",
+      description: "The best house cleaners."
    }
 ];
 
@@ -27,7 +33,7 @@ const Ads = () => {
    useEffect(
       () => {
          const inter = setInterval(
-            () => setAutoSlide(val => (val + 1) % images.length),
+            () => setAutoSlide(val => (val + 1) % products.length),
             2500
          );
          return () => clearInterval(inter);
@@ -37,11 +43,11 @@ const Ads = () => {
    return (
       <div className='w-full p-4 flex flex-row justify-center items-start'>
          <div className='w-4/5' style={{ height: "CALC(100vh - 6rem)" }}>
-            <Image src={images[autoSlide].image} alt='Product' style={{ maxHeight: "100%" }} />
+            <Image src={products[autoSlide].image} alt='Product' className='w-full h-full' />
          </div>
          <div className='w-1/5 flex flex-col justify-start items-stretch text-center' style={{ height: "CALC(100vh - 6rem)" }}>
             {
-               images.map(
+               products.map(
                   (e, i) =>
                      <div
                         key={e.name}
