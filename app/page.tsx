@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Products, Ads, Loading, About } from "./components";
+import { Products, Ads, Loading } from "./components";
 
 export default function Home() {
   return (
@@ -8,9 +8,6 @@ export default function Home() {
         <Ads />
         <Products />
       </main>
-      <footer>
-        <About />
-      </footer>
     </Suspense>
   );
 }

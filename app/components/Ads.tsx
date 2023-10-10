@@ -42,10 +42,10 @@ const Ads = () => {
 
    return (
       <div className='w-full p-4 flex flex-row justify-center items-start'>
-         <div className='w-4/5' style={{ height: "CALC(100vh - 6rem)" }}>
+         <div className='w-4/5' style={{ height: "CALC(100vh - 9rem)" }}>
             <Image src={products[autoSlide].image} alt='Product' className='w-full h-full' />
          </div>
-         <div className='w-1/5 flex flex-col justify-start items-stretch text-center' style={{ height: "CALC(100vh - 6rem)" }}>
+         <div className='w-1/5 flex flex-col justify-start items-stretch text-center' style={{ height: "CALC(100vh - 9rem)" }}>
             {
                products.map(
                   (e, i) =>

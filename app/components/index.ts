@@ -1,11 +1,11 @@
 import Header from "./Header";
 import Ads from "./Ads";
-import Products from "./Products";
-import Card from "./Card";
+import Products from "./Products/Products";
 import Button from "./Button";
 import Loading from "./Loading";
 import About from "./About";
-import Category from "./Category";
-import SeeMoreCard from "./SeeMoreCard";
+import Search from "./Search";
+import ListOfProducts from "./ListOfProducts/ListOfProducts";
+import CircleButton from "./CircleButton";
 
-export { Header, Ads, Products, Card, Button, Loading, About, Category, SeeMoreCard };
+export { Header, Ads, Products, Button, Loading, About, Search, ListOfProducts, CircleButton };

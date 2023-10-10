@@ -1,12 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from ".";
+import { Button } from "..";
 
 const SeeMoreCard = (
-   { name, image }: {
-      name: string,
-      image: string
+   { name }: {
+      name: string
    }
 ) => {
    const router = useRouter();

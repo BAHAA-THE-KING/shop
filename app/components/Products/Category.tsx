@@ -1,15 +1,15 @@
 "use client";
 
-import { Card, SeeMoreCard } from ".";
+import Card from "./Card";
+import SeeMoreCard from "./SeeMoreCard";
 
 const Category = (
-   { name, image, products }: {
+   { name, products }: {
       name: string,
-      image: string,
       products: {
          id: number,
          name: string,
-         imageURL: string,
+         imageURL: any,
          description: string
       }[]
    }
@@ -32,7 +32,7 @@ const Category = (
                   e => <Card key={e.id} product={e} />
                )
             }
-            <SeeMoreCard name={name} image={image} />
+            <SeeMoreCard name={name} />
          </div>
          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <div
