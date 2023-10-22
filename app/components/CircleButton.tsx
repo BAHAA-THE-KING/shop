@@ -1,20 +1,28 @@
-"use client";
-
-import { MouseEventHandler, ReactNode } from "react";
+import { ReactNode } from "react";
 
 function CircleButton(
-   { title, onClick, className }: {
-      title: string | ReactNode,
-      onClick: MouseEventHandler<HTMLDivElement>,
+   { OnElement, OffElement, type, className }: {
+      OnElement: ReactNode,
+      OffElement: ReactNode,
+      type: "cart" | "star" | "more",
       className: string
    }
 ) {
    return (
-      <div
-         className={"btn btn-circle " + className}
-         onClick={onClick}>
-         {title}
-      </div>
+      <label
+         className={"btn btn-circle swap " + className}
+         onClick={
+            e => {
+               e.stopPropagation();
+               if (type === "cart") { }
+               if (type === "star") { }
+               if (type === "more") { }
+            }
+         }>
+         <input type="checkbox" />
+         {OnElement}
+         {OffElement}
+      </label>
    );
 }
 

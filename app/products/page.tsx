@@ -1,4 +1,7 @@
-import { Search, ListOfProducts } from "../components";
+"use client";
+
+import { ListOfProducts } from "../components";
+import Search from "./Search";
 
 export default function Home(
   { search, orderBy, orderType }: {

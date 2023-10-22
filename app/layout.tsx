@@ -1,7 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import About from './About'
+import Header from './Header'
 import { Inter } from 'next/font/google'
-import { About, Header } from './components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="light">
       <body className={inter.className}>
         <Header />
-        <main style={{minHeight:"CALC(100vh - 64px - 68px)"}}>
+        <main style={{ minHeight: "CALC(100vh - 64px - 68px)" }}>
           {children}
         </main>
         <About />

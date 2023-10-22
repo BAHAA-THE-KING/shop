@@ -45,7 +45,7 @@ const Header = () => {
                   {
                      items.map(
                         item =>
-                           <li>
+                           <li key={item.title}>
                               <Link href={item.url}>{item.title}</Link>
                            </li>
                      )
@@ -59,7 +59,7 @@ const Header = () => {
                {
                   items.map(
                      item =>
-                        <li>
+                        <li key={item.title}>
                            <Link href={item.url}>{item.title}</Link>
                         </li>
                   )

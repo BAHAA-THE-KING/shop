@@ -1,5 +1,3 @@
-"use client";
-
 import Card from "./Card";
 import SeeMoreCard from "./SeeMoreCard";
 

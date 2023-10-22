@@ -5,7 +5,7 @@ import Image from 'next/image';
 import image0 from "@/public/sofa.webp";
 import image1 from "@/public/toys.jpg";
 import image2 from "@/public/detergants.jpg";
-import normal from './styles/normal';
+import normal from './components/styles/normal';
 
 const products = [
    {

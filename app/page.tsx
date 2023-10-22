@@ -1,5 +1,9 @@
+"use client";
+
 import { Suspense } from "react";
-import { Products, Ads, Loading } from "./components";
+import Loading from "./Loading";
+import Ads from "./Ads";
+import { Products } from "./components";
 
 export default function Home() {
   return (
