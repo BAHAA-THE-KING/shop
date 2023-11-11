@@ -1,19 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "..";
 import Image from "next/image";
 import { motion } from "framer-motion"
 import { useState } from "react";
+import { Button } from "..";
+import Product from "@/app/types/Product";
 
 const Card = (
    { product }: {
-      product: {
-         id: number,
-         name: string,
-         imageURL: any,
-         description: string
-      }
+      product: Product
    }) => {
    const router = useRouter();
    const [finished, setFinished] = useState(false);

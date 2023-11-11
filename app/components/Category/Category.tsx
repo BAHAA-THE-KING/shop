@@ -1,15 +1,11 @@
+import Product from "@/app/types/Product";
 import Card from "./Card";
 import SeeMoreCard from "./SeeMoreCard";
 
 const Category = (
    { name, products }: {
       name: string,
-      products: {
-         id: number,
-         name: string,
-         imageURL: any,
-         description: string
-      }[]
+      products: Product[]
    }
 ) => {
    return (
@@ -20,10 +16,10 @@ const Category = (
          <hr className="w-full border-black" />
          <br />
          <div
-            id={name}
+            id={name.replace(" ", "_")}
             className="pb-10 grid grid-rows-1 items-center gap-3 overflow-auto"
             style={{
-               gridTemplateColumns: "repeat(5,24rem) auto", scrollbarWidth: "none"
+               gridTemplateColumns: "repeat(" + products.length + ",24rem) auto", scrollbarWidth: "none"
             }}>
             {
                products.map(
@@ -35,12 +31,12 @@ const Category = (
          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <div
                className="btn btn-circle"
-               onClick={() => document.querySelector("#" + name)!.scrollBy({ left: -400, behavior: "smooth" })}>
+               onClick={() => document.querySelector("#" + name.replace(" ", "_"))!.scrollBy({ left: -400, behavior: "smooth" })}>
                ❮
             </div>
             <div
                className="btn btn-circle"
-               onClick={() => document.querySelector("#" + name)!.scrollBy({ left: 400, behavior: "smooth" })}>
+               onClick={() => document.querySelector("#" + name.replace(" ", "_"))!.scrollBy({ left: 400, behavior: "smooth" })}>
                ❯
             </div>
          </div>

@@ -5,9 +5,11 @@ import Link from "next/link";
 import { CartCircleButton, FavCircleButton, MoreCircleButton, SlideLTR } from "..";
 import Product from "@/app/types/Product";
 
-function ListItem(
-   { product }: {
-      product: Product
+function ListCartItem(
+   { product, setProducts, onClick }: {
+      product: Product,
+      setProducts: Function,
+      onClick: Function | null
    }
 ) {
    return (
@@ -34,7 +36,16 @@ function ListItem(
                      hover
                      hover:text-white
                      hover:bg-purple-500
-                     ">
+                     "
+               onClick={
+                  e => {
+                     if (onClick) {
+                        e.preventDefault();
+                        onClick(product);
+                     }
+                  }
+               }
+            >
                <div className="w-2/3 h-full flex flex-row justify-start items-stretch">
                   <Image src={product.imageURL} alt={product.name} className="w-1/6 max-w-full max-h-full rounded-2xl" />
                   <span className="w-1/2 h-full text-2xl ms-2">
@@ -46,12 +57,18 @@ function ListItem(
                <div>
                   <CartCircleButton
                      inCart={product.inCart}
-                     onClick={(e: any) => { e.stopPropagation(); }}
+                     onClick={
+                        (e: any) => {
+                           setProducts(
+                              (products: Product[]) => products.map(e => e.id === product.id ? Object.assign(e, { inCart: !product.inCart }) : e)
+                           );
+                        }
+                     }
                      className="m-1"
                   />
                   <FavCircleButton
                      isFav={product.isFav}
-                     onClick={(e: any) => { e.stopPropagation(); }}
+                     onClick={(e: any) => { }}
                      className="m-1"
                   />
                   <MoreCircleButton
@@ -64,4 +81,4 @@ function ListItem(
    );
 }
 
-export default ListItem;
+export default ListCartItem;

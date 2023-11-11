@@ -14,9 +14,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={inter.className}>
+      <body className={`
+                        w-full
+                        min-h-screen
+                        overflow-x-hidden
+                        flex
+                        flex-col
+                        justify-between
+                        items-stretch
+                        ${inter.className}
+                         `}>
         <Header />
-        <main style={{ minHeight: "CALC(100vh - 64px - 68px)" }}>
+        <main>
           {children}
         </main>
         <About />
