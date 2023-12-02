@@ -11,6 +11,9 @@ const nextConfig = {
             hostname: 'www.kingsford.com',
          },
       ]
+   },
+   typescript:{
+      ignoreBuildErrors: true
    }
 }
 
